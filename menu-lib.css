@@ -1,0 +1,117 @@
+:root {
+    --hm-side-menu-width: 192px;
+    --hm-borger-line-width: 24px;
+}
+
+#hm-side-menu {
+    position: absolute;
+    width: var(--hm-side-menu-width);
+    left: calc(var(--hm-side-menu-width) * -0.8);
+    background-color: var(--comfy-menu-bg);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: 0.1s;
+}
+
+    #hm-side-menu:hover {
+        left: 0px;
+    }
+
+    #hm-side-menu .content {
+        width: calc(100% - var(--hm-borger-line-width) * 2);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em 0.25em;
+        gap: 0.5em;
+    }
+
+        #hm-side-menu .content > button {
+            color: var(--input-text);
+            background-color: var(--comfy-input-bg);
+            border-radius: 8px;
+            border-color: var(--border-color);
+            border-style: solid;
+            width: 100%;
+            overflow: hidden;
+            font-size: 16px;
+            text-align: justify;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+            #hm-side-menu .content > button:hover {
+                filter: brightness(1.2);
+                cursor: pointer;
+            }
+
+    #hm-side-menu #hm-borger {
+        display: block;
+        position: absolute;
+        right: calc(var(--hm-side-menu-width) / 32);
+        top: calc(50% - (var(--hm-borger-line-width) / 3));
+    }
+
+        #hm-side-menu #hm-borger > div {
+            width: var(--hm-borger-line-width);
+            height: calc(var(--hm-borger-line-width) / 8);
+            background-color: white;
+            margin: 2px;
+            border-radius: 1px;
+        }
+
+#hm-sub-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    min-height: 25vh;
+    max-height: 50vh;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 1em;
+    background-color: var(--comfy-menu-bg);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+    #hm-sub-menu .title {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        background-color: var(--bg-color);
+        border-radius: 8px;
+        margin-bottom: 1em;
+    }
+
+    #hm-sub-menu .content {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    #hm-sub-menu .close-btn {
+        color: var(--input-text);
+        background-color: var(--comfy-input-bg);
+        border-radius: 8px;
+        border-color: var(--border-color);
+        border-style: solid;
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 1em;
+    }
+
+        #hm-sub-menu .close-btn:hover {
+            filter: brightness(1.2);
+            cursor: pointer;
+        }
